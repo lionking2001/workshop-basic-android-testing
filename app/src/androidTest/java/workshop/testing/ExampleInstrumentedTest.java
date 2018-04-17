@@ -1,6 +1,7 @@
 package workshop.testing;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.test.InstrumentationRegistry;
 import android.support.test.runner.AndroidJUnit4;
 
@@ -23,4 +24,5 @@ public class ExampleInstrumentedTest {
 
         assertEquals("workshop.testing", appContext.getPackageName());
     }
+
 }
