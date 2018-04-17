@@ -11,7 +11,7 @@ public class RecipeTest {
 
     @Test
     public void water(){
-        InputStream stream = RecipeTest.class.getResourceAsStream("/ecipes/water.txt");
+        InputStream stream = RecipeTest.class.getResourceAsStream("/recipes/water.txt");
         Recipe recipe = Recipe.readFromStream(stream);
         assertNotNull(recipe);
 
