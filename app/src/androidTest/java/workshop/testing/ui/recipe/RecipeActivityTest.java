@@ -18,11 +18,11 @@ public class RecipeActivityTest {
     @Rule
     public ActivityTestRule<RecipeActivity> activityTestRule = new ActivityTestRule<>(RecipeActivity.class, true, false);
 
-    @Test
-    public void openActivityByDefaultShouldShowRecipeRecipenotfound() {
-        activityTestRule.launchActivity(new Intent());
-        onView(withId(R.id.description)).check(matches(withText("Recipe not found")));
-    }
+//    @Test
+//    public void openActivityByDefaultShouldShowRecipeRecipenotfound() {
+//        activityTestRule.launchActivity(new Intent());
+//        onView(withId(R.id.description)).check(matches(withText("Recipe not found")));
+//    }
     @Test
     public void success(){
         Intent intent = new Intent();
