@@ -34,20 +34,21 @@ public class RecipeStore {
 
         try {
             stream1 = context.getAssets().open(file1.getPath());
-              stream2 = context.getAssets().open(file2.getPath());
+            stream2 = context.getAssets().open(file2.getPath());
             stream3 = context.getAssets().open(file3.getPath());
             stream4 = context.getAssets().open(file4.getPath());
 
             Recipe recipe = Recipe.readFromStream(stream1);
             recipes.add(recipe);
+            map.put(recipe.id, recipe);
             recipe = Recipe.readFromStream(stream2);
-           recipes.add(recipe);
+            recipes.add(recipe);
+            map.put(recipe.id, recipe);
             recipe = Recipe.readFromStream(stream3);
-           recipes.add(recipe);
+            recipes.add(recipe);
+            map.put(recipe.id, recipe);
             recipe = Recipe.readFromStream(stream4);
-           recipes.add(recipe);
-
-
+            recipes.add(recipe);
             map.put(recipe.id, recipe);
         } catch (IOException e) {
             e.printStackTrace();
