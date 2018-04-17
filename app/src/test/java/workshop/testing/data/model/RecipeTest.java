@@ -14,6 +14,7 @@ public class RecipeTest {
         InputStream stream = RecipeTest.class.getResourceAsStream("/recipes/water.txt");
         Recipe recipe = Recipe.readFromStream(stream);
         assertNotNull(recipe);
+        assertEquals("Water",recipe.title);
 
 
     }
