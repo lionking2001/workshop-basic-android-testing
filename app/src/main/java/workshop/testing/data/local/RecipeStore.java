@@ -21,6 +21,9 @@ public class RecipeStore {
 
         // Demo in workshop :: Ugly code !!
         File file1 = new File(directory, "chocolate_pudding.txt");
+        File file2 = new File(directory,"creamed_carrots.text");
+        File file3 = new File(directory,"deviled_eggs");
+        File file4 = new File(directory,"fried_tomatoes");
         InputStream stream1 = null;
         try {
             stream1 = context.getAssets().open(file1.getPath());
