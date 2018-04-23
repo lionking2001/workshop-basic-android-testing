@@ -18,7 +18,7 @@ public class RecipeActivityTest {
     @Rule
     public ActivityTestRule<RecipeActivity> activityRule
             = new ActivityTestRule<RecipeActivity>(
-            RecipeActivity.class,true,false
+            RecipeActivity.class, true, false
     );
 
 //    @Test
@@ -44,15 +44,26 @@ public class RecipeActivityTest {
                 "Cook until it thickens, beat whites of eggs and put on top, put in oven to brown. Serve with cream, if preferred.")));
 
     }
-    
+
     @Test
-    public void show_detail_of_creamed_carrots(){
-        Intent intent=new Intent();
-        intent.putExtra(RecipeActivity.KEY_ID,"creamed_carrots");
+    public void show_detail_of_creamed_carrots() {
+        Intent intent = new Intent();
+        intent.putExtra(RecipeActivity.KEY_ID, "creamed_carrots");
         activityRule.launchActivity(intent);
 
         onView(withId(R.id.title)).check(matches(withText("Creamed Carrots")));
         onView(withId(R.id.description)).check(matches(withText("Peel and dice carrots, cook in salt water until tender, remove from stove and drain. Fry 4 slides of bacon, drain off a part of grease, cut bacon in small slices, add carrots, 2 tablespoons of flour, stir all together, add 1 cup of sweet cream, salt and pepper to taste.")));
+
+    }
+    
+    @Test
+    public void show_detail_of_deviled_eggs() {
+        Intent intent = new Intent();
+        intent.putExtra(RecipeActivity.KEY_ID, "deviled_eggs");
+        activityRule.launchActivity(intent);
+
+        onView(withId(R.id.title)).check(matches(withText("Deviled Eggs")));
+        onView(withId(R.id.description)).check(matches(withText("Boil fresh eggs until hard, remove shells, cut into halves lengthwise, remove yolks and mash very fine. Season with melted butter, pepper, salt, sugar and a little vinegar or prepared salad dressing may be used if preferred. Stuff eggs and in the center of each put a stuffed olive.")));
 
     }
 
