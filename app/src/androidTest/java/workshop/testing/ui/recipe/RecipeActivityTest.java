@@ -18,15 +18,15 @@ public class RecipeActivityTest {
     @Rule
     public ActivityTestRule<RecipeActivity> activityTestRule = new ActivityTestRule<>(RecipeActivity.class, true, false);
 
-//    @Test
-//    public void openActivityByDefaultShouldShowRecipeRecipenotfound() {
-//        activityTestRule.launchActivity(new Intent());
-//        onView(withId(R.id.description)).check(matches(withText("Recipe not found")));
-//    }
+        @Test
+    public void openActivityByDefaultShouldShowRecipeRecipenotfound() {
+        activityTestRule.launchActivity(new Intent());
+        onView(withId(R.id.description)).check(matches(withText("Recipe not found")));
+    }
     @Test
-    public void success(){
+    public void success() {
         Intent intent = new Intent();
-        intent.putExtra(KEY_ID,"chocolate_pudding");
+        intent.putExtra(KEY_ID, "chocolate_pudding");
         activityTestRule.launchActivity(intent);
         onView(withId(R.id.title)).check(matches(withText("Chocolate Pudding")));
     }
