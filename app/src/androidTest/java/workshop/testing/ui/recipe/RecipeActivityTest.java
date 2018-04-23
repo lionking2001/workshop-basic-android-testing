@@ -68,9 +68,9 @@ public class RecipeActivityTest {
     }
 
     @Test
-    public void show_detail_of_fried_tomatoes(){
-        Intent intent=new Intent();
-        intent.putExtra(RecipeActivity.KEY_ID,"fried_tomatoes");
+    public void show_detail_of_fried_tomatoes() {
+        Intent intent = new Intent();
+        intent.putExtra(RecipeActivity.KEY_ID, "fried_tomatoes");
         activityRule.launchActivity(intent);
 
         onView(withId(R.id.title)).check(matches(withText("Fried Tomatoes")));
@@ -79,9 +79,9 @@ public class RecipeActivityTest {
     }
 
     @Test
-    public void show_detail_of_hamcheese(){
-        Intent intent=new Intent();
-        intent.putExtra(RecipeActivity.KEY_ID,"hamcheese");
+    public void show_detail_of_hamcheese() {
+        Intent intent = new Intent();
+        intent.putExtra(RecipeActivity.KEY_ID, "hamcheese");
         activityRule.launchActivity(intent);
         onView(withId(R.id.title)).check(matches(withText("delicious")));
         onView(withId(R.id.description)).check(matches(withText("Best food in the world")));
