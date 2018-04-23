@@ -79,6 +79,17 @@ public class RecipeActivityTest {
     }
 
     @Test
+    public void show_detail_of_hamcheese(){
+        Intent intent=new Intent();
+        intent.putExtra(RecipeActivity.KEY_ID,"hamcheese");
+        activityRule.launchActivity(intent);
+        onView(withId(R.id.title)).check(matches(withText("delicious")));
+        onView(withId(R.id.description)).check(matches(withText("Best food in the world")));
+
+    }
+
+
+    @Test
     public void success() {
         Intent intent = new Intent();
         intent.putExtra(KEY_ID, "chocolate_pudding");
