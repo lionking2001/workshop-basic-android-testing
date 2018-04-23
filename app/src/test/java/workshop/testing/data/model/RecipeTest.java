@@ -44,18 +44,7 @@ public class RecipeTest {
         InputStream stream = RecipeTest.class.getResourceAsStream("/recipes/no_id.txt");
         stream.close();
         Recipe recipe = Recipe.readFromStream(stream);
-
-
-
-
-
-
-
-
-
-
-
-
+       assertEquals(null, recipe);
     }
 
 }
