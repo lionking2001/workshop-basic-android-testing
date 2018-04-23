@@ -10,6 +10,7 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.logging.Handler;
 
 import workshop.testing.data.model.Recipe;
 
@@ -29,7 +30,6 @@ public class RecipeStore {
         fileList.add(new File(directory, "creamed_carrots.txt"));
         fileList.add(new File(directory, "deviled_eggs.txt"));
         fileList.add(new File(directory, "fried_tomatoes.txt"));
-
         try {
             for (int i=0; i<fileList.size();i++){
                 stream = context.getAssets().open(fileList.get(i).getPath());

@@ -55,7 +55,7 @@ public class RecipeActivityTest {
         onView(withId(R.id.description)).check(matches(withText("Peel and dice carrots, cook in salt water until tender, remove from stove and drain. Fry 4 slides of bacon, drain off a part of grease, cut bacon in small slices, add carrots, 2 tablespoons of flour, stir all together, add 1 cup of sweet cream, salt and pepper to taste.")));
 
     }
-    
+
     @Test
     public void show_detail_of_deviled_eggs() {
         Intent intent = new Intent();
@@ -64,6 +64,17 @@ public class RecipeActivityTest {
 
         onView(withId(R.id.title)).check(matches(withText("Deviled Eggs")));
         onView(withId(R.id.description)).check(matches(withText("Boil fresh eggs until hard, remove shells, cut into halves lengthwise, remove yolks and mash very fine. Season with melted butter, pepper, salt, sugar and a little vinegar or prepared salad dressing may be used if preferred. Stuff eggs and in the center of each put a stuffed olive.")));
+
+    }
+
+    @Test
+    public void show_detail_of_fried_tomatoes(){
+        Intent intent=new Intent();
+        intent.putExtra(RecipeActivity.KEY_ID,"fried_tomatoes");
+        activityRule.launchActivity(intent);
+
+        onView(withId(R.id.title)).check(matches(withText("Fried Tomatoes")));
+        onView(withId(R.id.description)).check(matches(withText("When about half ripe, wash, cut in halves, season with salt and pepper, dust with bread crumbs. Have hot butter in skillet, brown tomatoes on both sides. Then put over moderate fire to cook slowly. Add 1-3 cup cream and let boil up. Tomatoes will have to be removed with cake turner.")));
 
     }
 
