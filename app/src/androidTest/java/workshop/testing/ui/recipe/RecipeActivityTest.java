@@ -18,11 +18,31 @@ public class RecipeActivityTest {
     @Rule
     public ActivityTestRule<RecipeActivity> activityTestRule = new ActivityTestRule<>(RecipeActivity.class, true, false);
 
-        @Test
+    @Test
     public void openActivityByDefaultShouldShowRecipeRecipenotfound() {
         activityTestRule.launchActivity(new Intent());
         onView(withId(R.id.description)).check(matches(withText("Recipe not found")));
+
     }
+    
+    @Test
+    public void show_detail_of_chocolate_pudding() {
+        Intent intent = new Intent();
+        intent.putExtra(RecipeActivity.KEY_ID, "chocolate_pudding");
+        activityTestRule.launchActivity(intent);
+
+        onView(withId(R.id.title)).check(matches(withText("Chocolate Pudding")));
+        onView(withId(R.id.description)).check(matches(withText("2 tablespoons chocolate\n" +
+                "yolks of 4 eggs\n" +
+                "1 cup sugar\n" +
+                "1 quart milk\n" +
+                "1 whole egg\n" +
+                "2 tablespoons corn starch\n" +
+                "\n" +
+                "Cook until it thickens, beat whites of eggs and put on top, put in oven to brown. Serve with cream, if preferred.")));
+
+    }
+
     @Test
     public void success() {
         Intent intent = new Intent();
