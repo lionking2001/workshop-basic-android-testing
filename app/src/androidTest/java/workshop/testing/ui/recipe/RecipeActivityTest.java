@@ -21,10 +21,12 @@ public class RecipeActivityTest {
             RecipeActivity.class, true, false
     );
 
-//    @Test
-//    public void noContentOnOpenActivity(){
-//        onView(withId(R.id.description)).check(matches(withText("Recipe not found.")));
-//    }
+    @Test
+    public void noContentOnOpenActivity(){
+        Intent intent = new Intent();
+        activityRule.launchActivity(intent);
+        onView(withId(R.id.description)).check(matches(withText("Recipe not found.")));
+    }
 
 
     @Test
@@ -78,7 +80,7 @@ public class RecipeActivityTest {
 
     }
 
-    
+
     @Test
     public void success() {
         Intent intent = new Intent();
